@@ -1,7 +1,18 @@
 package main
 
-import "greetings"
+import (
+	"fmt"
+	"greetings"
+	"log"
+)
 
 func main() {
-	greetings.SliceDebug()
+	log.SetPrefix("greetings:")
+	log.SetFlags(0)
+	msg, err := greetings.Hello("")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(msg)
 }
