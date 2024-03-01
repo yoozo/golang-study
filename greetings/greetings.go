@@ -13,6 +13,8 @@ func Hello(name string) (string, error) {
 
 	// 在问候消息中.
 	message := fmt.Sprintf(randomFormat(), name)
+	// message := fmt.Sprint(randomFormat())
+
 	return message, nil
 }
 
