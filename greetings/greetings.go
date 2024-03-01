@@ -16,7 +16,19 @@ func Hello(name string) (string, error) {
 	return message, nil
 }
 
-// init 为函数中使用的变量设置初始值.
+func Hellos(names []string) (map[string]string, error) {
+	msgMap := make(map[string]string)
+
+	for _, name := range names {
+		msg, err := Hello(name)
+		if err != nil {
+			return nil, err
+		}
+
+		msgMap[name] = msg
+	}
+	return msgMap, nil
+}
 
 func randomFormat() string {
 	formats := []string{
