@@ -21,4 +21,15 @@ func main() {
 	// 如果没有返回错误，则打印返回的map
 	// 消息到控制台.
 	fmt.Println(messages)
+
+	fmt.Println("main: ", c())
+}
+
+func c() int {
+	i := 1
+	defer func() {
+		i++
+		fmt.Println("defer", i)
+	}()
+	return i
 }
